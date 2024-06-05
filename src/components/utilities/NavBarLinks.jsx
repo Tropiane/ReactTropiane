@@ -1,7 +1,7 @@
 function NavBarLinks(props){
     return(
         <>
-        <a href={props.link} tContent="">{props.tContent}</a>
+        <a href={props.link} className="italic hover:not-italic" >{props.tContent}</a>
         </>
     )
 }
