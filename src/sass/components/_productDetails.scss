@@ -1,0 +1,26 @@
+.productDetails{
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-areas: 
+        "description price"
+    ;
+    .productDescription{
+        grid-area: description;
+        @include flex(column, center, center);
+        width: 400px;
+        h2{
+            color: $textPrimary;
+        }
+        img{
+            height: 300px;
+            border-radius: 15px;
+        }
+        p{
+            color: $textSecundary;
+        }
+    }
+    .productPrice{
+        grid-area: price;
+        @include flex(column, center, center);
+    }
+}

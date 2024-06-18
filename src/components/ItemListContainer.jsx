@@ -1,8 +1,12 @@
-function ItemListContainer(props){
+import { useEffect, useState } from "react";
+import ItemList from "./utilities/ItemList";
+
+
+function ItemListContainer(){
 
     return(
         <div className="container">
-            <h2 className="text-2xl font-bold">{props.greeting}</h2>
+            <ItemList/>
         </div>
     )
 }

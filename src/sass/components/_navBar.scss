@@ -40,11 +40,7 @@ header{
             display: flex;
             align-items: center;
             cursor: pointer;
-            transition: .2s;
-            &:hover{
-                transition: .3s;
-                transform: scale(1.2);
-            }
+            transition: .3s;
             .cartTotalProduct{
                 text-align: right;
                 margin: 0px;
@@ -52,9 +48,24 @@ header{
                 background-color: $bgPrincipal;
                 border-radius: 50%;
                 padding: 3px;
+                transition: .5s;
             }
             .cartIcon{
                 height: 30px;
+            }
+            &:hover{
+                transition: .3s;
+                transform: scale(1.1);
+                .cartTotalProduct{
+                    transition: .3s;
+                    transform: translateX(-20px);
+                    margin-bottom: 8px;
+                    background-color: transparent;
+                    border-radius: 5px;
+                    padding: 0px;
+                    color: $bgPrincipal;
+                    font-weight: 600;
+                }
             }
         }
     }

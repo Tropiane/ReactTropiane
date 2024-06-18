@@ -1,14 +1,15 @@
 import Header from './components/Header'
 import './sass/index.scss'
-import ItemListContainer from './components/ItemListContainer'
+import { BrowserRouter } from 'react-router-dom'
+import Main from './components/Main'
 
 function App() {
 
   return (
-    <>
+    <BrowserRouter>
     <Header/>
-    <ItemListContainer greeting="Home"/>
-    </>
+    <Main/>
+    </BrowserRouter>
   )
 }
 
