@@ -26,8 +26,11 @@ function NavBar(props){
             
             <nav className="navBar">
                 <NavLink to="/" className=" text-slate-500">Home</NavLink>
+
                 <NavLink to="/product/" className=" text-slate-500" > Products</NavLink>
+
                 <NavLink >Categorías<FontAwesomeIcon icon={faArrowDownWideShort} className='cartIcon'/></NavLink>
+                
                 <NavLink to="/cart" className="text-slate-500"><CartWidget/></NavLink>
             </nav>
             
