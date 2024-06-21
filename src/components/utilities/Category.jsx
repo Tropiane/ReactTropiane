@@ -12,7 +12,11 @@ const Category=(arr)=>{
     return(
         <>
         {categories.map(cat=>(
-            <NavLink key={cat} to={`/product/category/${cat}`}>{cat}</NavLink>
+            <NavLink key={cat} to={`/product/category/${cat}`}>
+                <ul>
+                    <li>{cat}</li>
+                </ul>
+                </NavLink>
         ))}
         </>
     )

@@ -16,9 +16,12 @@ const ItemDetail = () => {
     }, [id]);
   
     if (!product) {
-      return <div className="text-lg text-center shadow-lg shadow-indigo-500/50">
-        <h2 className="text-gray-50">Cargando...</h2>
-        </div>;
+      return(
+        <>
+        <h2 className="titles">Cargando...</h2>;
+        </>
+      )
+
     }
   
     return (

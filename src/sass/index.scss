@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./utilities/grid.scss";
 @import "./utilities/_mixin.scss";
 @import "./utilities/colors";
 
@@ -9,6 +10,7 @@
 @import "./components/container";
 @import "./components/productDetails";
 @import "./components/footer";
+@import "./components/class";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 *{

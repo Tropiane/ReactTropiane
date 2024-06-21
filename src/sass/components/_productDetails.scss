@@ -8,8 +8,15 @@
         grid-area: description;
         @include flex(column, center, center);
         width: 400px;
+        border: 1px solid $bgSecundary;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px;
+        text-align: center;
         h2{
             color: $textPrimary;
+            font-weight: 600;
+            margin: 2px;
         }
         img{
             height: 300px;
@@ -22,5 +29,20 @@
     .productPrice{
         grid-area: price;
         @include flex(column, center, center);
+        p{
+            border: 1px solid $bgSecundary;
+            padding: 5px;
+            border-radius: 10px;
+            margin: 0px;
+            color: $textSecundary;
+        }
+        .btnCount{
+            border: 1px solid $bgSecundary;
+            padding: 5px;
+            border-radius: 10px;
+            margin: 0px;
+            font-weight: 600;
+            font-size: large;
+        }
     }
 }

@@ -14,7 +14,6 @@ const Categories = ()=>{
           .catch(error => console.error('error obteniendo información', error));
       }, 2000);
     }, []);
-    console.log(products);
   
     if(products.length == 0){
         return <> <h2 className="titles">Cargando Items</h2></>

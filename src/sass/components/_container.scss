@@ -1,18 +1,7 @@
 .container{
-    width: 100%;
+    width: auto;
     flex-wrap: wrap;
     @include flex(auto, center, center);
-    h2{
-        color: $textSecundary;
-        padding: 5px;
-        text-align: center;
-    }
-}
-.titles{
-    text-align: center;
-    font-weight: 600;
-    font-size:large;
-    color: $spanColor1
 }
 
 .item{
