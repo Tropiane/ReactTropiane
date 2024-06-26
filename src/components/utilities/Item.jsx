@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 
-function Item(props){
+function Item({arr}){
     
     return(
         <>
-        {props.arr.map(product=>(
+        {arr.map(product=>(
             <div key={product.id}className="item">
                 <h3>{product.title}</h3>
                 <img src={product.image} alt={product.title} />

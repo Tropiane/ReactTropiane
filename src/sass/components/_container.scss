@@ -40,8 +40,9 @@
                 border-radius: 10px;
                 transition: .4s;
                 &:active{
-                    transition: .3s;
-                    background-image: linear-gradient(#88B7B5,#847996);
+                    transition: .2s;
+                    color: $textPrimary;
+                    background-image: linear-gradient($bgPrincipal,$bgSecundary);
                 }
             }
         }

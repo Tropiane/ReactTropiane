@@ -3,6 +3,7 @@ import ItemListContainer from "./ItemListContainer";
 import ItemDetail from "./ItemDetail";
 import Home from "./Home";
 import Categories from "./utilities/Categories";
+import Carrito from "./Carrito";
 
 function Main(){
 
@@ -11,7 +12,7 @@ function Main(){
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/product/" element={<ItemListContainer greeting="Cargando Productos..."/>}/>
-                <Route path="/cart" element={<h2 className="text-center text-xl underline decoration-black text-slate-50">Carrito vacío</h2>}/>
+                <Route path="/cart" element={<Carrito/>}/>
                 <Route path="/product/:id" element={<ItemDetail/>}/>
                 <Route path="/product/category/:cat" element={<Categories/>}/>
             </Routes>
