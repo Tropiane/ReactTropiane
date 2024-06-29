@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 
-const Category=()=>{
+const Category=(arr)=>{
     const [categories, setCategories] = useState([]);
 
     useEffect(()=>{

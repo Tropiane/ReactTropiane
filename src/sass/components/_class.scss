@@ -5,3 +5,12 @@
     font-size:large;
     color: $spanColor1
 }
+
+.carrito{
+    @include flex(column, center, center);
+    .cartForm{
+        input{
+            border: 1px solid $bgPrincipal;
+        }
+    }
+}
