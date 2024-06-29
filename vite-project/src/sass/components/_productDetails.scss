@@ -1,0 +1,52 @@
+.productDetails{
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-areas: 
+        "description price"
+    ;
+    .productDescription{
+        grid-area: description;
+        @include flex(column, center, center);
+        width: 400px;
+        border: 1px solid $bgSecundary;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px;
+        text-align: center;
+        h2{
+            color: $textPrimary;
+            font-weight: 600;
+            margin: 2px;
+        }
+        img{
+            height: 300px;
+            border-radius: 15px;
+        }
+        p{
+            color: $textSecundary;
+        }
+    }
+    .productPrice{
+        grid-area: price;
+        @include flex(column, center, center);
+        p{
+            border: 1px solid $bgSecundary;
+            padding: 5px;
+            border-radius: 10px;
+            margin: 0px;
+            color: $textSecundary;
+        }
+        .btnCount{
+            @include flex(column, center, center);
+            border: 1px solid $bgSecundary;
+            padding: 5px;
+            border-radius: 10px;
+            margin: 0px;
+            font-weight: 600;
+            font-size: large;
+            button{
+                margin: 5px;
+            }
+        }
+    }
+}
