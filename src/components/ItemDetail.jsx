@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ButtonItem from "./utilities/ButtonItem";
+import ItemCount from "./utilities/ItemCount";
 
 const ItemDetail = () => {
     const { id } = useParams();
@@ -36,7 +36,7 @@ const ItemDetail = () => {
 
         <div className="productPrice">
         <p>Precio: ${product.price}</p>
-        <ButtonItem initial={0} stock={9}/>
+        <ItemCount initial={0} stock={9}/>
         </div>
 
       </div>
