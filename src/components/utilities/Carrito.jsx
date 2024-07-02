@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import ItemForm from "./ItemForm";
+import {cartContext} from '../providers/CartProvider';
 
 
 function Carrito(){
     const [products, setProducts] = useState([]);
-
+    const contextValue = useContext(cartContext)
+    
     if(products.length == 0){
         return <>
         <div className="carrito text-center">

@@ -1,9 +1,14 @@
-import { useState } from "react";
+import {useContext ,useState } from "react";
 import Input from "./Input";
+import CartProvider, {cartContext} from '../providers/CartProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ItemCount({initial, stock}){
     const [product, setProduct] = useState(initial);
-    const [cartProducts, setCartProducts] = useState([])
+    const [cartProducts, setCartProducts] = useState(0)
+    const contextValue = useContext(cartContext)
+    const popUp = ()=> toast("añadiste al carrito")
 
     const addProduct = ()=>{
         if (product < stock) {
@@ -18,6 +23,8 @@ function ItemCount({initial, stock}){
 
     const addCart = ()=>{
         setCartProducts(product)
+        contextValue.count(cartProducts)  
+        popUp()
     } 
     
     return(
@@ -26,10 +33,7 @@ function ItemCount({initial, stock}){
             <button onClick={removeProduct} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">-</button>
 
             <button onClick={addProduct} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">+</button>
-
-            <Input cartProduct={cartProducts} product={product} onAdd={addCart}/>
-
-            <Input isCart={true}/>
+            <Input cartProduct={contextValue.cant} product={product} onAdd={addCart}/>
          </div>
         </>
     )

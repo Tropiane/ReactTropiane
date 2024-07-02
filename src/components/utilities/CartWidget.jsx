@@ -1,17 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react';
-import Input from './Input';
+import { useContext, useState } from 'react';
+import {cartContext} from '../providers/CartProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function CartWidget(){
-    const [data, setData] = useState();
-    
+
+    const contextValue = useContext(cartContext)
+    console.log("value", contextValue.cant);
     return(
         <>
         <div className='cart'>
             <FontAwesomeIcon icon={faCartShopping} className='cartIcon'/>
-            <Input isCart={true}/>
+            <p>{contextValue.cant}</p>
+            <ToastContainer/>
         </div>
         
         </>
