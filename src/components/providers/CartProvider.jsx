@@ -4,17 +4,15 @@ export const cartContext = createContext();
 const Provider = cartContext.Provider;
 
 function CartProvider({children}){
-    const [cartCant, setCartCant] = useState(0)
-    
+    const [prodDetails, setProdDetails] = useState([])
+    console.log(prodDetails.length);
     const contextValue = {
-        cant : cartCant,
-        count : (counter)=>{
-            setCartCant(cartCant + counter)
+        details : prodDetails,
+        setDetails : (prod)=>{
+            setProdDetails(prod)
         }
-        
     }
- 
-    console.log("cartCant",cartCant);
+    console.log("prodDetails is", prodDetails);
     return(
         <Provider value={contextValue}>
             {children}

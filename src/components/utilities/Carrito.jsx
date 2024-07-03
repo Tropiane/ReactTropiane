@@ -7,7 +7,10 @@ import {cartContext} from '../providers/CartProvider';
 function Carrito(){
     const [products, setProducts] = useState([]);
     const contextValue = useContext(cartContext)
-    
+    useEffect(()=>{
+        setProducts(contextValue.details)
+    }, [])
+    console.log(products);
     if(products.length == 0){
         return <>
         <div className="carrito text-center">
@@ -20,7 +23,12 @@ function Carrito(){
     }
     return(
         <>
-            {/* lógica de productos añadidos */}
+        {products.map((product)=>(
+            <div key={product.id}>
+            <h3>{product.title}</h3>
+            <img src={product.image} alt={product.title} className="object-contain h-48 w-96"/>
+        </div>
+        ))}
         </>
     )
 }

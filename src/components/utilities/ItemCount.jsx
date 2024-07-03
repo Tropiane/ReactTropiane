@@ -1,14 +1,16 @@
 import {useContext ,useState } from "react";
 import Input from "./Input";
 import CartProvider, {cartContext} from '../providers/CartProvider';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function ItemCount({initial, stock}){
+function ItemCount({initial, stock, producId}){
     const [product, setProduct] = useState(initial);
-    const [cartProducts, setCartProducts] = useState(0)
+    const [cartProducts, setCartProducts] = useState([])
     const contextValue = useContext(cartContext)
-    const popUp = ()=> toast("añadiste al carrito")
+    const popUp = ()=> toast(`añadiste (${product}) ${producId.title}`)
+
+
 
     const addProduct = ()=>{
         if (product < stock) {
@@ -22,8 +24,8 @@ function ItemCount({initial, stock}){
     }
 
     const addCart = ()=>{
-        setCartProducts(product)
-        contextValue.count(cartProducts)  
+        setCartProducts([producId])
+        contextValue.setDetails(cartProducts)
         popUp()
     } 
     

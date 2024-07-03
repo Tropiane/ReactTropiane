@@ -7,14 +7,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 function CartWidget(){
-
     const contextValue = useContext(cartContext)
-    console.log("value", contextValue.cant);
+
     return(
         <>
         <div className='cart'>
             <FontAwesomeIcon icon={faCartShopping} className='cartIcon'/>
-            <p>{contextValue.cant}</p>
+            <p>{contextValue.details.length}</p>
             <ToastContainer/>
         </div>
         
