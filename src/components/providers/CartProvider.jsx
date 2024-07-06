@@ -5,13 +5,21 @@ const Provider = cartContext.Provider;
 
 function CartProvider({children}){
     const [prodDetails, setProdDetails] = useState([])
-    console.log(prodDetails.length);
+    const [prodTotal, setProdTotal] = useState(0)
+
     const contextValue = {
-        details : prodDetails,
+        details : prodDetails.filter((item, index)=>{
+            return prodDetails.indexOf(item) === index;
+        }),
         setDetails : (prod)=>{
-            setProdDetails(prod)
-        }
+            setProdDetails([...prodDetails, prod])
+        },
+        setTotal : (tot)=>{
+            setProdTotal(prodTotal + tot)
+        },
+        total : prodTotal
     }
+
     console.log("prodDetails is", prodDetails);
     return(
         <Provider value={contextValue}>

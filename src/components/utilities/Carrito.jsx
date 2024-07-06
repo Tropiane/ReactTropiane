@@ -2,15 +2,18 @@ import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import ItemForm from "./ItemForm";
 import {cartContext} from '../providers/CartProvider';
+import ProductCart from "./ProductCart";
 
 
 function Carrito(){
-    const [products, setProducts] = useState([]);
     const contextValue = useContext(cartContext)
+    const [products, setProducts] = useState([]);
+    
     useEffect(()=>{
         setProducts(contextValue.details)
     }, [])
-    console.log(products);
+    console.log(contextValue);
+
     if(products.length == 0){
         return <>
         <div className="carrito text-center">
@@ -23,12 +26,9 @@ function Carrito(){
     }
     return(
         <>
-        {products.map((product)=>(
-            <div key={product.id}>
-            <h3>{product.title}</h3>
-            <img src={product.image} alt={product.title} className="object-contain h-48 w-96"/>
-        </div>
-        ))}
+            <div className="cartProducts">
+                <ProductCart arr={products}/>
+            </div>    
         </>
     )
 }

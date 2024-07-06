@@ -3,11 +3,11 @@ import Input from "./Input";
 import CartProvider, {cartContext} from '../providers/CartProvider';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Header from "../Header";
 
 function ItemCount({initial, stock, producId}){
-    const [product, setProduct] = useState(initial);
-    const [cartProducts, setCartProducts] = useState([])
     const contextValue = useContext(cartContext)
+    const [product, setProduct] = useState(initial);
     const popUp = ()=> toast(`añadiste (${product}) ${producId.title}`)
 
 
@@ -24,9 +24,9 @@ function ItemCount({initial, stock, producId}){
     }
 
     const addCart = ()=>{
-        setCartProducts([producId])
-        contextValue.setDetails(cartProducts)
         popUp()
+        contextValue.setDetails(producId)
+        contextValue.setTotal(product)
     } 
     
     return(
@@ -36,6 +36,7 @@ function ItemCount({initial, stock, producId}){
 
             <button onClick={addProduct} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">+</button>
             <Input cartProduct={contextValue.cant} product={product} onAdd={addCart}/>
+
          </div>
         </>
     )
