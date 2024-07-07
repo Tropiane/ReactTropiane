@@ -20,7 +20,6 @@ function CartProvider({children}){
         total : prodTotal
     }
 
-    console.log("prodDetails is", prodDetails);
     return(
         <Provider value={contextValue}>
             {children}

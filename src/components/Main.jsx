@@ -4,6 +4,7 @@ import ItemDetail from "./ItemDetail";
 import Home from "./Home";
 import Categories from "./utilities/Categories";
 import Carrito from "./utilities/Carrito";
+import ItemForm from "./utilities/ItemForm";
 
 function Main(){
 
@@ -15,6 +16,7 @@ function Main(){
                 <Route path="/cart" element={<Carrito/>}/>
                 <Route path="/product/:id" element={<ItemDetail/>}/>
                 <Route path="/product/category/:cat" element={<Categories/>}/>
+                <Route path="/checkout" element={<ItemForm/>}/>
             </Routes>
         </main>
     )

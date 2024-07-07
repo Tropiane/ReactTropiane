@@ -8,9 +8,13 @@
 
 .carrito{
     @include flex(column, center, center);
-    .cartForm{
-        input{
-            border: 1px solid $bgPrincipal;
-        }
+}
+.cartForm{
+    text-align: center;
+    form{
+        @include flex(column, center, center);
+    }
+    input{
+        border: 1px solid $bgPrincipal;
     }
 }

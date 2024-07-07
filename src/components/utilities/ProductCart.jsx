@@ -7,14 +7,18 @@ function ProductCart({arr}){
             return arr.indexOf(item) === index;
         })
         setProducts(data)
+        console.log(products);
     }, [])
 
     return(
         <>     
     {products.map((product)=>(
-        <div key={product.id}>
+        <div key={product.id} className="cartProduct">
+            <img src={product.image} alt={product.title} />
             <h3>{product.title}</h3>
-            <img src={product.image} alt={product.title} className="object-contain h-48 w-96"/>
+            <p className="cartPrice">${product.price}</p>
+            <p className="cartQuantity">cantidad: 5{}</p>
+            <button>quitar</button>
         </div>
     ))}
     </>
