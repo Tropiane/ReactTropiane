@@ -1,4 +1,4 @@
-import {useContext ,useState } from "react";
+import {memo, useContext ,useState } from "react";
 import Input from "./Input";
 import CartProvider, {cartContext} from '../providers/CartProvider';
 import { toast } from 'react-toastify';
@@ -42,4 +42,4 @@ function ItemCount({initial, stock, producId}){
     )
 }
 
-export default ItemCount;
+export default memo(ItemCount);

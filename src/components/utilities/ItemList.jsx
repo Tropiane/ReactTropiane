@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import Item from "./Item";
+import { useFetch } from "../utils";
 
 
 function ItemList(){
     const [products, setProducts] = useState([]);
-
+    const URL = `https://fakestoreapi.com/products`;
     useEffect(()=>{
         setTimeout(() => {
-            fetch(`https://fakestoreapi.com/products`).then(res => res.json())
-            .then(data => setProducts(data))
-            .catch(error => console.error("error al buscar elementos", error))
+            useFetch(URL, setProducts)
         }, 2000);
     }, [])
 
