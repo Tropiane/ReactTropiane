@@ -2,19 +2,22 @@ import { useEffect, useState } from "react";
 
 function ProductCart({arr}){
     const [products, setProducts] = useState([])
-
-    const deleteItem =()=>{
-        const element = products.indexOf(e);
-        element !== -1 && products.splice(element, 1)
-    }
-
     useEffect(()=>{
         const data = arr.filter((item, index)=>{
-            console.log(item);
             return arr.indexOf(item) === index;
         })
         setProducts(data)
     }, [])
+    
+    const deleteItem =()=>{
+        const element = products.find((item, index)=>{
+                const product = products.indexOf(item); 
+                console.log(index);
+                product !== -1 && products.splice(1, product)
+
+        })
+        console.log(products);
+    }
 
     return(
         <>     

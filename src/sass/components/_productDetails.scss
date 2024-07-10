@@ -37,13 +37,15 @@
             color: $textSecundary;
         }
         .btnCount{
-            @include flex(column, center, center);
             border: 1px solid $bgSecundary;
             padding: 5px;
             border-radius: 10px;
             margin: 0px;
             font-weight: 600;
             font-size: large;
+            .addCant{
+                @include flex(row, center, center)
+            }
             button{
                 margin: 5px;
             }
