@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Item from "./Item";
 
 const Categories = ()=>{
@@ -18,7 +18,6 @@ const Categories = ()=>{
     if(products.length == 0){
         return <> <h2 className="titles">Cargando Items</h2></>
     }
-  
     return (
       <>
         <div className="container">

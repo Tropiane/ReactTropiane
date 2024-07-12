@@ -7,8 +7,8 @@ function Header(){
     return(
         <>
         <header className="header">
-        <ToastContainer/>
-        <NavBar/>
+            <ToastContainer/>
+            <NavBar/>
         </header>
         </>
     )

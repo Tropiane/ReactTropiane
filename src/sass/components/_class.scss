@@ -18,3 +18,44 @@
         border: 1px solid $bgPrincipal;
     }
 }
+.findContainer{
+    @include flex(column, center, center);
+    ::-webkit-scrollbar{
+        display: none;
+        scroll-behavior: smooth;
+    }
+    input{
+        width: 50%
+    }
+}
+.findItems{
+    @include flex(row, center, center);
+    width: 50%;
+    max-height: 200px;
+    min-height: 50px;
+    overflow: scroll;
+    border: 1px, solid, $textPrimary;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+.findItem{
+    @include flex(row, left, center);
+    border: 1px, solid, $textPrimary;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 2px;
+    width: 400px;
+    transition: .2s;
+    h4{
+        font-size: 13px;
+        color: #abb7c4;
+    }
+    img{
+        height: 60px;
+        border-radius: 15px;
+    }
+    &:hover{
+        transition: 0.2s;
+        transform: scale(1.05);
+    }
+}

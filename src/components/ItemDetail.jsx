@@ -7,6 +7,7 @@ const ItemDetail = () => {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     const URL =`https://fakestoreapi.com/products/${id}`
+
     useEffect(() => {
       setTimeout(() => {
         useFetch(URL, setProduct);
@@ -16,7 +17,7 @@ const ItemDetail = () => {
     if (!product) {
       return(
         <>
-        <h2 className="titles">Cargando...</h2>;
+          <h2 className="titles">Cargando...</h2>;
         </>
       )
 
@@ -33,8 +34,8 @@ const ItemDetail = () => {
         </div>
 
         <div className="productPrice">
-        <p>Precio: ${product.price}</p>
-        <ItemCount initial={0} stock={9} producId={product}/>
+          <p>Precio: ${product.price}</p>
+          <ItemCount initial={0} stock={9} producId={product}/>
         </div>
 
       </div>

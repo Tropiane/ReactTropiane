@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Item from "./Item";
 import { useFetch } from "../utils";
-
+import { itemContext } from "../providers/ItemProvider";
 
 function ItemList(){
     const [products, setProducts] = useState([]);
     const URL = `https://fakestoreapi.com/products`;
+    const contextValue = useContext(itemContext)
+    
+    contextValue.setFinder(products)
     useEffect(()=>{
         setTimeout(() => {
             useFetch(URL, setProducts)
@@ -17,7 +20,7 @@ function ItemList(){
     }
     return(
         <>
-        <Item arr={products}/>
+            <Item arr={products}/>
         </>
     )
 }

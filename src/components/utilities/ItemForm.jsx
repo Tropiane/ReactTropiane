@@ -9,15 +9,7 @@ const Form =()=>{
         e.preventDefault()
     }
 
-    const handleKeyDown =(e)=>{
-        if (e.key == "1") {
-            e.preventDefault()
-            setError(true)
-            setAlerta("No se puede usar el numero 1")
-        }else{
-            setError(false)
-        }
-    }
+
     const inputClass = "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
     return(
         <div className="cartForm w-full max-w-xs">

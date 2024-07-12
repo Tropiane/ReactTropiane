@@ -1,10 +1,6 @@
-import { useState } from "react";
-import ItemForm from "./ItemForm";
 import { NavLink } from "react-router-dom";
 
 function CheckOut({total}){
-
-
     return(
         <>
             <p>Checkout</p>
