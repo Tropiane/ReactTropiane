@@ -6,6 +6,7 @@ const Provider = cartContext.Provider;
 function CartProvider({children}){
     const [prodDetails, setProdDetails] = useState([])
     const [prodTotal, setProdTotal] = useState(0)
+    const [productCant, setProductCant] = useState([])
 
     const contextValue = {
         details : prodDetails.filter((item, index)=>{
@@ -17,7 +18,11 @@ function CartProvider({children}){
         setTotal : (tot)=>{
             setProdTotal(prodTotal + tot)
         },
-        total : prodTotal
+        total : prodTotal,
+        cantProduct : productCant,
+        setCantProduct : (cant)=>{
+            setProductCant(cant)
+        }
     }
 
     return(
