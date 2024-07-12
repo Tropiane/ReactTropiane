@@ -1,9 +1,13 @@
-import { useState } from "react";
+import {memo, useContext ,useState } from "react";
 import Input from "./Input";
+import {cartContext} from '../providers/CartProvider';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function ItemCount({initial, stock}){
+function ItemCount({initial, stock, producId}){
+    const contextValue = useContext(cartContext)
     const [product, setProduct] = useState(initial);
-    const [cartProducts, setCartProducts] = useState([])
+    const popUp = ()=> toast(`añadiste (${product}) ${producId.title}`)
 
     const addProduct = ()=>{
         if (product < stock) {
@@ -17,22 +21,26 @@ function ItemCount({initial, stock}){
     }
 
     const addCart = ()=>{
-        setCartProducts(product)
+        popUp()
+        contextValue.setDetails(producId)
+        contextValue.setTotal(product)
     } 
     
     return(
         <>
          <div className="btnCount">
+            <Input cartProduct={contextValue.cant} product={product} onAdd={addCart}/>
+            
+            <div className="addCant">
+
             <button onClick={removeProduct} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">-</button>
 
             <button onClick={addProduct} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">+</button>
+            </div>
 
-            <Input cartProduct={cartProducts} product={product} onAdd={addCart}/>
-
-            <Input isCart={true}/>
          </div>
         </>
     )
 }
 
-export default ItemCount;
+export default memo(ItemCount);

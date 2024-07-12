@@ -6,7 +6,6 @@ function Footer(){
         <>
         <div className="footer">
         <NavBar isFooter={true}></NavBar>
-
         </div>
         </>
     )

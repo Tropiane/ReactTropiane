@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useFetch } from "../utils";
 
 
-const Category=(arr)=>{
+const Category=()=>{
     const [categories, setCategories] = useState([]);
-
+    const URL = "https://fakestoreapi.com/products/categories";
     useEffect(()=>{
-        fetch("https://fakestoreapi.com/products/categories").then(res=> res.json())
-        .then(data => setCategories(data))
+        useFetch(URL,setCategories)
     }, [])
+
     return(
         <>
         {categories.map(cat=>(

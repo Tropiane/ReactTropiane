@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Item from "./Item";
-
+import { useFetch } from "../utils";
+import { itemContext } from "../providers/ItemProvider";
 
 function ItemList(){
     const [products, setProducts] = useState([]);
-
+    const URL = `https://fakestoreapi.com/products`;
+    const contextValue = useContext(itemContext)
+    
+    contextValue.setFinder(products)
     useEffect(()=>{
         setTimeout(() => {
-            fetch(`https://fakestoreapi.com/products`).then(res => res.json())
-            .then(data => setProducts(data))
-            .catch(error => console.error("error al buscar elementos", error))
+            useFetch(URL, setProducts)
         }, 2000);
     }, [])
 
@@ -18,7 +20,7 @@ function ItemList(){
     }
     return(
         <>
-        <Item arr={products}/>
+            <Item arr={products}/>
         </>
     )
 }
