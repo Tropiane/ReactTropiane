@@ -15,6 +15,7 @@ export function createProducts (cant){
                 description: faker.commerce.productDescription(),
                 image : faker.image.urlPicsumPhotos(),
                 price : faker.commerce.price(),
+                category : faker.commerce.department()
             }
             addDoc(productsCollection, product)
             .then((res) => {
@@ -29,14 +30,13 @@ export function createProducts (cant){
 
 }
 
-export function getProducts (){
-    const consulta = getDocs(productsCollection)
-    .then((res) => {
-        res.docs.forEach(doc => {
-            console.log(doc.data())
-        })
+export async function getProducts (){
+    const res = await getDocs(productsCollection)
+    
+    const products = res.docs.map((doc)=>{
+        const product = doc.data()
+        product.id = doc.id
+        return product
     })
-    .catch(() => {
-        console.log("hubo un error")
-    })
+    return products
 }
