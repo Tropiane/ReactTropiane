@@ -24,6 +24,7 @@ function ItemCount({initial, stock, producId}){
         popUp()
         contextValue.setDetails(producId)
         contextValue.setTotal(product)
+        contextValue.setCantProduct(product)
     } 
     
     return(

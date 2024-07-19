@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Item from "./Item";
+import { getUniqueCategories } from "../actions";
 
 const Categories = ()=>{
     const { cat } = useParams();
@@ -8,9 +9,7 @@ const Categories = ()=>{
   
     useEffect(() => {
       setTimeout(() => {
-        fetch(`https://fakestoreapi.com/products/category/${cat}`)
-          .then(response => response.json())
-          .then(data => setProducts(data))
+          getUniqueCategories(cat).then((data)=>{setProducts(data)})
           .catch(error => console.error('error obteniendo información', error));
       }, 2000);
     }, []);
