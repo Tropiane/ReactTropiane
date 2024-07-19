@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemCount from "./utilities/ItemCount";
-import { useFetch } from "./utils";
+import { getProductsId } from "./actions";
 
 const ItemDetail = () => {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
-    const URL =`https://fakestoreapi.com/products/${id}`
-
+  
     useEffect(() => {
       setTimeout(() => {
-        useFetch(URL, setProduct);
+        getProductsId(id).then((data)=>{setProduct(data)})
       }, 2000);
     }, [id]);
-  
+
     if (!product) {
       return(
         <>
