@@ -5,14 +5,12 @@ import { filterCategories} from "../actions";
 
 const Category=({isNav})=>{
     const [categories, setCategories] = useState([]);
+    const classN = isNav ? "categoryNav" : "category";
 
     useEffect(()=>{
         filterCategories().then(res=>setCategories(res))
     }, [])
 
-
-    const classN = isNav ? "categoryNav" : "category";
-    
     return(
         <>
         <div className={classN}>

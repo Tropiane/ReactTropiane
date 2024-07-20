@@ -1,5 +1,5 @@
 import {memo, useContext ,useState } from "react";
-import Input from "./Input";
+import ItemQuantitySelector from "./ItemQuantitySelector";
 import {cartContext} from '../providers/CartProvider';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -29,7 +29,7 @@ function ItemCount({initial, stock, producId}){
     
     return(
          <div className="btnCount">
-            <Input cartProduct={contextValue.cant} product={product} onAdd={addCart}/>
+            <ItemQuantitySelector cartProduct={contextValue.cant} product={product} onAdd={addCart}/>
             
             <div className="addCant">
 

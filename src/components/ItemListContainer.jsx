@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import Item from "./Item";
-import { itemContext } from "../providers/ItemProvider";
-import { getProducts } from "../actions";
+import Item from "./utilities/Item";
+import { itemContext } from "./providers/ItemProvider";
+import { getProducts } from "./actions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+
 
 function ItemListContainer(){
     const [products, setProducts] = useState([]);

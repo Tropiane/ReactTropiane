@@ -1,4 +1,4 @@
-const Input=({cartProduct, product, onAdd, isCart})=>{
+const ItemQuantitySelector=({cartProduct, product, onAdd, isCart})=>{
     if (isCart == true) {
         return(<p className="cartTotalProduct">{cartProduct}</p>)
     }
@@ -10,4 +10,4 @@ const Input=({cartProduct, product, onAdd, isCart})=>{
     )
 }
 
-export default Input
+export default ItemQuantitySelector
