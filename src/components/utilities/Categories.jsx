@@ -15,7 +15,10 @@ const Categories = ()=>{
     }, []);
   
     if(products.length == 0){
-        return <> <h2 className="titles">Cargando Items</h2></>
+        return  <div className="container">
+        <FontAwesomeIcon icon={faCartPlus} className='itemIcon'/>
+        <p>Buscando productos...</p>
+    </div>
     }
     return (
         <div className="container">
