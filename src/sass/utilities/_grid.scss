@@ -1,4 +1,5 @@
 #root{
+    z-index: 1;
     height: 100vh;
     display: grid;
     grid-template-columns: 1;
@@ -18,4 +19,42 @@
 }
 .footer{
     grid-area: footer;
+}
+
+.cart{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: 
+    "cartProducts checkout"
+    ;
+    .cartProducts{
+        grid-area: cartProducts;
+    }
+    .checkOut{
+        grid-area: checkout;
+    }
+}
+.cartProduct{
+    display: grid;
+    grid-template-columns: 1fr, 3fr, 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "img title price"
+    "img cant button"
+    ;
+    img{
+        grid-area: img;
+    }
+    h3{
+        grid-area: title;
+    }
+    .cartPrice{
+        grid-area: price;
+    }
+    .cartQuantity{
+        grid-area: cant; 
+    }
+    button{
+        grid-area: button;
+    }
 }

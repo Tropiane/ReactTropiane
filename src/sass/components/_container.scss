@@ -1,12 +1,12 @@
 .container{
-    width: 100%;
+    @include flex(row, center, center);
     flex-wrap: wrap;
-    @include flex(auto, center, center);
+    width: 100%;
 }
 
 .item{
     @include flex(column, center, center);
-    width: 270PX;
+    width: 270px;
     height: 400px;
     margin: 5px;
     border-radius: 10px;

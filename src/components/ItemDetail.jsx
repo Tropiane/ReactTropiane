@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemCount from "./utilities/ItemCount";
 import { getProductsId } from "./actions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 const ItemDetail = () => {
     const { id } = useParams();
@@ -13,17 +15,10 @@ const ItemDetail = () => {
       }, 2000);
     }, [id]);
 
-    if (!product) {
-      return(
-        <>
-          <h2 className="titles">Cargando...</h2>;
-        </>
-      )
-
-    }
+    if (!product) {return(<><FontAwesomeIcon icon={faCartPlus} className='itemIcon'/>
+      <p>Un segundito...</p></>)}
   
     return (
-      <>      
       <div className="productDetails">
         <div className="productDescription" key={product.id}>
           <h2>{product.title}</h2>
@@ -38,7 +33,6 @@ const ItemDetail = () => {
         </div>
 
       </div>
-      </>
     );
   };
 

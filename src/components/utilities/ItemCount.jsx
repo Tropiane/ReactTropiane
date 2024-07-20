@@ -25,10 +25,9 @@ function ItemCount({initial, stock, producId}){
         contextValue.setDetails(producId)
         contextValue.setTotal(product)
         contextValue.setCantProduct(product)
-    } 
+    }
     
     return(
-        <>
          <div className="btnCount">
             <Input cartProduct={contextValue.cant} product={product} onAdd={addCart}/>
             
@@ -40,7 +39,7 @@ function ItemCount({initial, stock, producId}){
             </div>
 
          </div>
-        </>
+
     )
 }
 

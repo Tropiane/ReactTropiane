@@ -6,6 +6,7 @@
 @import "./utilities/_mixin.scss";
 @import "./utilities/colors";
 
+@import "./components/category";
 @import "./components/navBar";
 @import "./components/container";
 @import "./components/productDetails";
@@ -13,17 +14,3 @@
 @import "./components/footer";
 @import "./components/class";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins";
-}
-body{
-    height: 100vh;
-    background-color: $bgPrincipal;
-    #root{
-        height: 100vh;
-    }
-}

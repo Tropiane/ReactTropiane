@@ -1,10 +1,6 @@
 const Input=({cartProduct, product, onAdd, isCart})=>{
     if (isCart == true) {
-        return(
-            <>
-            <p className="cartTotalProduct">{cartProduct}</p>
-            </>
-        )
+        return(<p className="cartTotalProduct">{cartProduct}</p>)
     }
     return(
         <>
