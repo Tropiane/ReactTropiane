@@ -2,9 +2,9 @@
 [![Deploy](https://vercel.com/button)](https://react-tropiane.vercel.app/)
 
 ### Descripción
-KaiShop es un E-commerce con la forma mas rapida, secilla y comoda de compra. Podrás elegir entre una gran variedad de productos en nuestro catalogo, con categorías como ropa, tecnología, zapatos. Ademas, podras realizar tus compras de forma segura y rapida, con un proceso de envío rapido. ¡Vamos a comprar!
+KaiShop es un E-commerce con la forma mas rápida, secilla y cómoda de compra. Podrás elegir entre una gran variedad de productos en nuestro catalogo, con categorías como ropa, tecnología, zapatos, entre otras. Ademas, podras realizar tus compras de forma segura y rapida, con nuestro proceso de envío rapido. ¡Vamos a comprar!
 
-### Caracteriísticas
+### Características
 
 
 #### Frontend
@@ -29,7 +29,7 @@ KaiShop es un E-commerce con la forma mas rapida, secilla y comoda de compra. Po
    git clone https://github.com/Tropiane/ReactTropiane
 
    2. Muevete a la carpeta del proyecto:
-   cd react-tropiane
+   cd VITE-PROJECT
 
    3. Instala dependencias:
    npm install
