@@ -18,11 +18,9 @@ const Categories = ()=>{
         return <> <h2 className="titles">Cargando Items</h2></>
     }
     return (
-      <>
         <div className="container">
         <Item arr={products}/>
         </div>      
-      </>
     );
 }
 

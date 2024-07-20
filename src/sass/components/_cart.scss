@@ -1,14 +1,30 @@
+
+.carrito{
+    @include flex(column, center, center);
+}
+.cartForm{
+    text-align: center;
+    form{
+        @include flex(column, center, center);
+    }
+    input{
+        border: 1px solid $bgPrincipal;
+    }
+}
+
+.cart{
+    @include flex(row, center, center);
+    width: 100%;
+    flex-wrap: wrap;
+    .cartProducts{
+        width: 50%;
+        @include flex(column, center, center);
+    }
+}
 .cartProduct{
     border-bottom: 1px solid $textPrimary;
-    width: 50%;
+    width: 100%;
     margin: 10px;
-    display: grid;
-    grid-template-columns: 1fr, 3fr, 1fr;
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas: 
-    "img title price"
-    "img cant button"
-    ;
     img{
         grid-area: img;
         border-radius: 10px;
@@ -17,7 +33,6 @@
         margin: 5px;
     }
     h3{
-        grid-area: title;
         font-size: 15px;
         text-align: center;
         color: $textPrimary;
@@ -25,19 +40,16 @@
         flex-wrap: wrap;
     }
     .cartPrice{
-        grid-area: price;
         text-align: right;
         color: $textSecundary;
     }
     .cartQuantity{
-        grid-area: cant;
         @include flex(column, center, center);
         color: $textSecundary;
         font-weight: 500;
         
     }
     button{
-        grid-area: button;
         width: max-content;
         display: flex;
         align-self: self-end;
@@ -54,4 +66,9 @@
             transition: .1s;
         }
     }
+}
+
+.checkOut{
+    @include flex(column, top, center);
+    width: 40%;
 }

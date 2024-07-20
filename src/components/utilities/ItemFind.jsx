@@ -12,11 +12,11 @@ function ItemFind(){
     }
     const filteredItems = finderItems.filter(item =>
         item.title.includes(itemTitle)
+        
       );
 
       if (itemTitle.length >= 1) {
         return(
-            <>
             <div className="findContainer">
             <input type="text"  
                 value={itemTitle}
@@ -34,9 +34,9 @@ function ItemFind(){
                 ))}
             </div>
             </div>
-            </>
         )
       }
+      if(finderItems.length > 0){
     return(
         <>
         <div className="findContainer">
@@ -44,6 +44,6 @@ function ItemFind(){
         </div>
         </>
     )
+    }
 }
-
 export default ItemFind;

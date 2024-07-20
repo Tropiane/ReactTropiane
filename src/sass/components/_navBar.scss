@@ -3,6 +3,7 @@ header{
     display: flex;
     text-align: center;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     top: 0;
     left: 0;
@@ -22,7 +23,7 @@ header{
         margin: 0px 5%;
     }
     .navBar{
-        width: 75%;
+        width: 100%;
         display: flex;
         text-align: center;
         align-items: center;
@@ -30,12 +31,10 @@ header{
         a{
             text-decoration: none;
             color: $textSecundary;
-            transition: .3s;
+            transition: .2s;
             text-transform: capitalize;
             &:hover{
-                background-color: $bgPrincipal;
-                padding: 5px;
-                border-radius: 1px 50%;
+                color: $textSecundary;
                 transition: .3s;
             }
         }
@@ -55,7 +54,6 @@ header{
             }
             .cartIcon{
                 height: 30px;
-                color: rgba(230, 230, 23, 0.829);
             }
             &:hover{
                 transition: .3s;
@@ -73,4 +71,29 @@ header{
             }
         }
     }
+}
+
+.dropDown{
+    text-decoration: none;
+    color: $textSecundary;
+    transition: .2s;
+    &:hover{
+        cursor: pointer;
+    }
+    .dropDownCategory{
+        background-color: $bgItem;
+        border-radius: 0px 0px 10px 10px;
+        z-index: 2;
+        position: absolute;
+        ul{
+            li{
+                border: 1px solid $bgSecundary;
+                padding: 2px;
+                &:hover{
+                    transform: scale(1.01);
+                }
+            }
+        }
+    }
+    
 }

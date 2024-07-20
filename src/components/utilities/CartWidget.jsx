@@ -9,13 +9,10 @@ function CartWidget(){
     const contextValue = useContext(cartContext)
 
     return(
-        <>
         <div className='cart'>
             <FontAwesomeIcon icon={faCartShopping} className='cartIcon'/>
             <p>{contextValue.total}</p>
         </div>
-        
-        </>
     )
 }
 

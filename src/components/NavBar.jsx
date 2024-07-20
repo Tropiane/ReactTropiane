@@ -2,6 +2,7 @@ import { NavLink} from "react-router-dom";
 import "../sass/components/_navBar.scss";
 import CartWidget from "./utilities/CartWidget";
 import DropDown from "./utilities/DropDown";
+import ItemFind from "./utilities/ItemFind";
 
 
 function NavBar(props){
@@ -23,14 +24,14 @@ function NavBar(props){
     }
     return(
         <>
-            <NavLink to="/"><h1 className="text-3xl font-bold underline">Kai<span>Shop</span></h1></NavLink>
-
+            <ItemFind/>
             <nav className="navBar">
+            <NavLink to="/"><h1 className="text-3xl font-bold underline">Kai<span>Shop</span></h1></NavLink>
+                <DropDown/>
                 <NavLink to="/" className=" text-slate-500">Home</NavLink>
 
                 <NavLink to="/product/" className=" text-slate-500" > Products</NavLink>
                 
-                <DropDown/>
 
                 <NavLink to="/cart" className="text-slate-500"><CartWidget/></NavLink>
             </nav>

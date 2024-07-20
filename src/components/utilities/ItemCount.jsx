@@ -1,5 +1,5 @@
 import {memo, useContext ,useState } from "react";
-import Input from "./Input";
+import ItemQuantitySelector from "./ItemQuantitySelector";
 import {cartContext} from '../providers/CartProvider';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -25,12 +25,11 @@ function ItemCount({initial, stock, producId}){
         contextValue.setDetails(producId)
         contextValue.setTotal(product)
         contextValue.setCantProduct(product)
-    } 
+    }
     
     return(
-        <>
          <div className="btnCount">
-            <Input cartProduct={contextValue.cant} product={product} onAdd={addCart}/>
+            <ItemQuantitySelector cartProduct={contextValue.cant} product={product} onAdd={addCart}/>
             
             <div className="addCant">
 
@@ -40,7 +39,7 @@ function ItemCount({initial, stock, producId}){
             </div>
 
          </div>
-        </>
+
     )
 }
 

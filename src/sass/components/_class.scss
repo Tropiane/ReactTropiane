@@ -6,56 +6,90 @@
     color: $spanColor1
 }
 
-.carrito{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+body{
+    height: 100vh;
+    background-color: $bgPrincipal;
+    #root{
+        height: 100vh;
+    }
+}
+
+
+.main{
     @include flex(column, center, center);
+    width: 100%;
 }
-.cartForm{
-    text-align: center;
-    form{
-        @include flex(column, center, center);
-    }
-    input{
-        border: 1px solid $bgPrincipal;
-    }
-}
+
 .findContainer{
+    z-index: 2;
+    position: relative;
     @include flex(column, center, center);
     ::-webkit-scrollbar{
         display: none;
         scroll-behavior: smooth;
     }
+    width: 100%;
     input{
-        width: 50%
+        width: 75%;
+    }
+    .findItems{
+        @include flex(row, left, center);
+        width: 75%;
+        max-height: 200px;
+        min-height: 50px;
+        overflow: scroll;
+        border: 1px, solid, $textPrimary;
+        background-color: $bgItem;
+        border-radius: 10px;
+        flex-wrap: wrap;
+        z-index: 2;
+        position: absolute;
+        top: 100%;
+    }
+    .findItem{
+        @include flex(row, left, center);
+        border-bottom: 1px solid $bgPrincipal;
+        margin: 2px;
+        padding: 3px;
+        width: 400px;
+        transition: .2s;
+        h4{
+            font-size: 13px;
+            color: #abb7c4;
+        }
+        img{
+            height: 60px;
+            border-radius: 15px;
+        }
+        &:hover{
+            transition: 0.2s;
+            transform: scale(1.05);
+        }
     }
 }
-.findItems{
-    @include flex(row, center, center);
-    width: 50%;
-    max-height: 200px;
-    min-height: 50px;
-    overflow: scroll;
-    border: 1px, solid, $textPrimary;
-    border-radius: 10px;
-    flex-wrap: wrap;
-}
-.findItem{
-    @include flex(row, left, center);
-    border: 1px, solid, $textPrimary;
-    border-radius: 10px;
-    margin: 2px;
-    padding: 2px;
-    width: 400px;
-    transition: .2s;
-    h4{
-        font-size: 13px;
-        color: #abb7c4;
+
+.itemIcon{
+    height: 50px;
+    width: 100%;
+    path{
+        animation:infinite  3s infinite;
+        color: $bgPrincipal;
+        @keyframes infinite{
+            from{
+                transform: translateX(-500%);
+                color: $textPrimary;
+            } 
+            to{
+                transform: translateX(500%);
+                color: $bgPrincipal;
+            }
+        }
     }
-    img{
-        height: 60px;
-        border-radius: 15px;
-    }
-    &:hover{
-        transition: 0.2s;
-        transform: scale(1.05);
-    }
+
 }
